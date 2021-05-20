@@ -24,8 +24,23 @@ module.exports = (app) => {
         "refresh_token" : "SnowToken",
         "token_type" : "bearer"
       })
-    app.get("/account/api/oauth/verify"), (req, res) => {
-       res.status(200)
-      .end();
+    app.get("/account/api/oauth/verify", (req, res) => {
+    res.json({
+      access_token: req.headers.authorization,
+      expires_in: 28800,
+      expires_at: "9999-12-31T23:59:59.999Z",
+      token_type: "bearer",
+      refresh_token: "cd581d37b0434726a37b0268bb99206c",
+      refresh_expires: 115200,
+      refresh_expires_at: "9999-12-31T23:59:59.999Z",
+      account_id: username || "SnowUser",
+      client_id: "3446cd72694c4a4485d81b77adbb2141",
+      internal_client: true,
+      client_service: "fortnite",
+      displayName: req.h,
+      app: "fortnite",
+      in_app_id: "default",
+      device_id: "164fb25bb44e42c5a027977d0d5da800",
+    });
+});
     }
-})}
