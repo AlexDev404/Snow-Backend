@@ -25,6 +25,7 @@ module.exports = (app) => {
         "token_type" : "bearer"
       })
     app.get("/account/api/oauth/verify"), (req, res) => {
-      // idk
+       res.status(200)
+      .end();
     }
 })}
